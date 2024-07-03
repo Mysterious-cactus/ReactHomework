@@ -1,0 +1,15 @@
+* {
+    font-family: Arial;
+}
+
+.restaurant-container {
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    border-bottom: 5px solid gold;
+}
+
+.text {
+    font-style: italic;
+    color: gray;
+}
