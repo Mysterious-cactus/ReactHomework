@@ -21,6 +21,10 @@ export const RestaurantContent = () => {
                 }
             </div>
             <Restaurant restaurantId={activeRestaurantId}/>
+            <br/>
+            <Restaurant restaurantId={activeRestaurantId}/>
+            <br/>
+            <Restaurant restaurantId={activeRestaurantId}/>
         </>
     );
 };
