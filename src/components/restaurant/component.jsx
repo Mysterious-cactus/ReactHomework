@@ -1,5 +1,6 @@
 import { restaurants } from "../../../data/mock"
 import { Dish } from "../dish/component";
+import { ReviewForm } from "../reviewForm/component";
 
 export const Restaurant = ({restaurantId}) => {
     let restaurant = restaurants.find(restaurant_ => restaurant_.id == restaurantId);
@@ -9,7 +10,7 @@ export const Restaurant = ({restaurantId}) => {
             <h3>Menu:</h3>            
             <ul>
                 {restaurant.menu.map((dish) => 
-                    <Dish key={dish.id} id={dish.id} name={dish.name} price={dish.price} ingredients={dish.ingredients} />
+                    (<Dish key={dish.id} id={dish.id} name={dish.name} price={dish.price} ingredients={dish.ingredients} />)
                 )}
             </ul>
             <h3>Reviews:</h3>
@@ -23,7 +24,9 @@ export const Restaurant = ({restaurantId}) => {
                     )
                     : <h4>No reviews</h4>
                 }
-            </ul>            
+            </ul> 
+            <h3>Write a review</h3>
+            <ReviewForm key={restaurantId}/>           
         </div>
     );
 }

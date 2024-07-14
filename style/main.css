@@ -13,3 +13,7 @@
     font-style: italic;
     color: gray;
 }
+
+body {
+    margin: 0;
+}

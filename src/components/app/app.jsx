@@ -1,10 +1,15 @@
+
 import { Layout } from "../layout/component";
 import { RestaurantContent } from "../restaurantContent/component";
+import { ProgressBar } from "../progressBar/component";
 
-export const App = () => {
+export const App = () => {  
     return (
-        <Layout>
-            <RestaurantContent />
-        </Layout>
+        <>
+            <ProgressBar />
+            <Layout>
+                <RestaurantContent />
+            </Layout>
+        </>  
     );
 };
