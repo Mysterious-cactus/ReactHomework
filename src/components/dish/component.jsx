@@ -1,9 +1,11 @@
 
 import { useCount } from "../../hooks/useCount";
 import { Counter } from "../counter/component";
+import { useUser } from "../userContext/component";
 
 export const Dish = ({name, price, id, ingredients}) => {    
     const { count, decrement, increment } = useCount({minValue: 0, maxValue: 5});
+    const { value: username } = useUser();
 
     return (
         !id ? null :
@@ -12,7 +14,7 @@ export const Dish = ({name, price, id, ingredients}) => {
             <label className="text">( {ingredients.map((ingredient) => ingredient + " ")})</label>
             <br />
             <br />
-            <Counter count={count} increment={increment} decrement={decrement}/>
+            { username != null ? <Counter count={count} increment={increment} decrement={decrement}/> : <></>}
         </li>
     );
 };

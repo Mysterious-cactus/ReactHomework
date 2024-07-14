@@ -1,0 +1,7 @@
+.headerContainer {
+    background-color: gray;
+    padding: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 97.5vw;
+}

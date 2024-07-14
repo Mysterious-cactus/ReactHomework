@@ -1,0 +1,26 @@
+.buttonContainer {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonLight {
+    background-color: gold;
+    color: black;
+    &:hover {
+        background-color: orange;
+    }
+}
+
+.buttonDark {
+    background-color: black;
+    color: white;
+    &:hover {
+        background-color: gray;
+    }
+}
+
+.restButton {
+    width: 20vw;
+    border-radius: 5px;
+}

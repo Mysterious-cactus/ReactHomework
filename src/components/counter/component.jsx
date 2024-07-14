@@ -1,11 +1,19 @@
-
+import { useTheme } from '../themeContext/component';
+import classNames from 'classnames';
+import styles from "./styles.module.css"
 
 export const Counter = ({ count, decrement, increment }) => {
+    const { value: themeMode } = useTheme();
+
     return (
         <>
-            <button onClick={decrement}>-</button>
+            <button className={classNames({[styles.buttonLight]: themeMode === "light",
+                                           [styles.buttonDark]: themeMode === "dark",}, styles.counterButton)} 
+                    onClick={decrement}>-</button>
                 {count}
-            <button onClick={increment}>+</button>
+            <button className={classNames({[styles.buttonLight]: themeMode === "light",
+                                           [styles.buttonDark]: themeMode === "dark",}, styles.counterButton)} 
+                    onClick={increment}>+</button>
         </>
     );
 };

@@ -1,0 +1,19 @@
+.buttonLight {
+    background-color: gold;
+    color: black;
+    &:hover {
+        background-color: orange;
+    }
+}
+
+.buttonDark {
+    background-color: black;
+    color: white;
+    &:hover {
+        background-color: gray;
+    }
+}
+
+.saveButton {
+    border-radius: 10px;
+}
