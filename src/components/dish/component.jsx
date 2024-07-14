@@ -1,8 +1,10 @@
 
+import { useCount } from "../../hooks/useCount";
 import { Counter } from "../counter/component";
 
-export const Dish = ({name, price, id, ingredients}) => {  
-    
+export const Dish = ({name, price, id, ingredients}) => {    
+    const { count, decrement, increment } = useCount({minValue: 0, maxValue: 5});
+
     return (
         !id ? null :
         <li>
@@ -10,7 +12,7 @@ export const Dish = ({name, price, id, ingredients}) => {
             <label className="text">( {ingredients.map((ingredient) => ingredient + " ")})</label>
             <br />
             <br />
-            <Counter min={0} max={5}/>
+            <Counter count={count} increment={increment} decrement={decrement}/>
         </li>
     );
 };
