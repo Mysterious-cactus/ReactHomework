@@ -1,9 +1,12 @@
-import "./header.css"
+import classNames from "classnames";
+import styles from "./styles.module.css"
+import { UserHeader } from "../user/component";
 
 export const Header = () => {
     return (
-        <div className="header-container">
+        <div className={classNames(styles.headerContainer)}>
             <h1>Restaurants</h1>
-        </div>
+            <UserHeader />                              
+        </div>       
     );
 };

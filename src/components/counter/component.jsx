@@ -1,11 +1,13 @@
 
+import { CounterButton } from '../counterButton/component';
 
 export const Counter = ({ count, decrement, increment }) => {
+
     return (
         <>
-            <button onClick={decrement}>-</button>
+            <CounterButton onClickFunc={decrement}>-</CounterButton>
                 {count}
-            <button onClick={increment}>+</button>
+            <CounterButton onClickFunc={increment}>+</CounterButton>
         </>
     );
 };

@@ -1,6 +1,9 @@
 import { useReducer } from "react";
 import { Counter } from "../counter/component";
 import { useCount } from "../../hooks/useCount";
+import { useTheme } from '../themeContext/component';
+import classNames from 'classnames';
+import styles from "./styles.module.css"
 
 const FORM_INIT = {
     username: "",
@@ -27,7 +30,7 @@ function reducer(state, {type, payload}) {
 export const ReviewForm = () => {
     const [form, dispatch] = useReviewForm(FORM_INIT);
     const {username, review} = form;
-    
+    const { value: themeMode } = useTheme();
     const { count, decrement, increment } = useCount({minValue: 1, maxValue: 5});
 
     return (
@@ -41,7 +44,10 @@ export const ReviewForm = () => {
             <label>Rating</label>
             <Counter count={count} increment={increment} decrement={decrement}/>
             <br/>
-            <button onClick={() => {dispatch({ type: "clear" })}}>Save</button>
+            <button className={classNames({[styles.buttonLight]: themeMode === "light",
+                                           [styles.buttonDark]: themeMode === "dark",
+                    }, styles.saveButton)} 
+                    onClick={() => {dispatch({ type: "clear" })}}>Save</button>
         </div>
     );
 };

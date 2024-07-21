@@ -1,0 +1,25 @@
+.counterButton {
+    border-radius: 50%;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLight {
+    background-color: gray;
+    color: white;
+    &:hover {
+        background-color: darkgray;
+    }
+}
+
+.buttonDark {
+    background-color: black;
+    color: white;
+    &:hover {
+        background-color: gray;
+    }
+}
