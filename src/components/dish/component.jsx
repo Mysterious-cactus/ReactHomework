@@ -14,7 +14,7 @@ export const Dish = ({name, price, id, ingredients}) => {
             <label className="text">( {ingredients.map((ingredient) => ingredient + " ")})</label>
             <br />
             <br />
-            { username != null ? <Counter count={count} increment={increment} decrement={decrement}/> : <></>}
+            { username != null ? <Counter count={count} increment={increment} decrement={decrement}/> : null}
         </li>
     );
 };
